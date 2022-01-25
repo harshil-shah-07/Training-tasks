@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>CALCULATOR</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Loading Bootstrap and jQuery CDN file -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- Loading Bootstrap Glyphicon library -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+        <!-- Loading calculator.js file -->
+        <script src="calculator.js"></script>
+    </head>
+    <body>
+        <h2><b><center>CALCULATOR</center></b></h2>
+
+        <p id="demo"></p>
+
+        <div class="container" style="margin-top: 200px; width: 500px;">
+            <div class="row" style="border: 1px solid black">
+                <div class="col" style="border: 1px solid black">
+                    <input type="text" id="calculator" style="width: 497px; margin-left: -15px;" readonly>
+                </div>
+                <div class="w-100"></div>
+                <div class="col num" style="border: 1px solid black"><center><b>7</b></center></div>
+                <div class="col num" style="border: 1px solid black"><center><b>8</b></center></div>
+                <div class="col num" style="border: 1px solid black"><center><b>9</b></center></div>
+                <div class="col op" style="border: 1px solid black"><center><b><i class="fas fa-divide"><input type="hidden" name="division" value="/"></i></b></center></div>
+                <div class="w-100"></div>
+                <div class="col num" style="border: 1px solid black"><center><b>4</b></center></div>
+                <div class="col num" style="border: 1px solid black"><center><b>5</b></center></div>
+                <div class="col num" style="border: 1px solid black"><center><b>6</b></center></div>
+                <div class="col op" style="border: 1px solid black"><center><b><i class="fas fa-times"><input type="hidden" name="multiplication" value="*"></i></b></center></div>
+                <div class="w-100"></div>
+                <div class="col num" style="border: 1px solid black"><center><b>1</b></center></div>
+                <div class="col num" style="border: 1px solid black"><center><b>2</b></center></div>
+                <div class="col num" style="border: 1px solid black"><center><b>3</b></center></div>
+                <div class="col op" style="border: 1px solid black"><center><b><i class="fas fa-minus"><input type="hidden" name="subtraction" value="-"></i></b></center></div>
+                <div class="w-100"></div>
+                <div class="col num" style="border: 1px solid black"><center><b>0</b></center></div>
+                <div class="col equal" style="border: 1px solid black" id="result"><center><b><i class="fas fa-equals"></i></b></center></div>
+                <div class="col" id="clear" style="border: 1px solid black"><center><b>C</b></center></div>
+                <div class="col op" style="border: 1px solid black"><center><b><i class="fas fa-plus"><input type="hidden" name="addition" value="+"></i></b></center></div>
+            </div>
+        </div>
+
+        <div onclick="test1()">
+            <button>Click</button>
+        </div>
+    </body>
+</html>

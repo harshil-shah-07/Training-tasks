@@ -1,0 +1,103 @@
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width: 800px; margin-left: -30%;">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title"><b>ADD A NEW USER</b></h4>
+            <button type="button" class="close" data-dismiss="modal" onclick="closeModal()">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+
+            <form method="POST" id="myForm" class="form">
+
+                <p class="form-group" id="p_id" style="display: none;">
+                    <input type='text' name='id' id='id' class='form-control'>
+                </p>
+
+                <span><b>Profile Image</b></span>
+                <div style="border: 2px solid royalblue">
+                    <p class="form-group" id="p_dispImg">
+                        <img src="Images/user.png" style="width: 100; height: 100;" alt="Upload you image" id="imgDisplay">
+                        <button type="button" class="btn btn-outline-danger col-sm-1" onclick="deleteImage()" id="delImg" name="delImg">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </p>
+                    <p class="form-group" id="p_image">
+                        <label for="image"><b>Upload Profile Image: </b></label>
+                        <input type="file" name="image" id="image" class="form-control">
+                        <span style="color: red;" id="err_img"></span>
+                    </p>
+                </div><br>
+
+                <span style="margin-top: 50px;"><b>Cover Images</b></span>
+                <div id="previewImg" style="height: 288px; border: 2px solid rebeccapurple;"></div>
+                <div>
+                    <label for="coverImage"><b>Cover Image: </b></label>
+                    <input type="file" multiple name="coverImg[]" id="coverImg">
+                </div><br>
+
+                <p class="form-group" id="p_fname">
+                    <label for='firstName'><b>First Name: </b></label>
+                    <input type='text' name='firstName' id='firstName' class='form-control' value=''>
+                    <span style="color: red;" id="err_fname"></span>
+                </p>
+                <p class="form-group" id="p_lname">
+                    <label for='lastName'><b>Last Name: </b></label>
+                    <input type='text' name='lastName' id='lastName' class='form-control' value=''>
+                    <span style="color: red;" id="err_lname"></span>
+                </p>
+                <p class="form-group" id="p_email">
+                    <label for='email'><b>Email Address: </b></label>
+                    <input type='text' name='email' id='email' class='form-control' value=''>
+                    <span style="color: red;" id="err_email"></span>
+                </p>
+                <p class="form-group" id="p_gender">
+                    <label for='gender'><b>Gender: </b></label>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                    <input type="radio" name="gender" value="Others"> Others
+                    <br><span style="color: red;" id="err_gender"></span>
+                </p>
+                <p class="form-group" id="p_hobbies">
+                    <label for="hobbies"><b>Hobbies: </b></label>
+                    <input type="checkbox" name="hobbies[]" id="Reading" value="Reading"> Reading
+                    <input type="checkbox" name="hobbies[]" id="Movies" value="Movies"> Movies
+                    <input type="checkbox" name="hobbies[]" id="Travelling" value="Travelling"> Travelling
+                    <input type="checkbox" name="hobbies[]" id="Sleeping" value="Sleeping"> Sleeping
+                </p>
+                <p class="form-group" id="p_occupation">
+                    <label for='occupation'><b>Occupation: </b></label>
+                    <select name="occupation" id="occupation" class="form-control">
+                        <option value="" disabled selected>Please select you occupation</option>
+                        <option value="HR Officer">HR Officer</option>
+                        <option value="Software Engineer">Software Engineer</option>
+                        <option value="Sales Officer">Sales Officer</option>
+                        <option value="Software Tester">Software Tester</option>
+                        <option value="Project Manager">Project Manager</option>
+                        <option value="Accountant">Accountant</option>
+                        <option value="Intern">Intern</option>
+                    </select>
+                    <span style="color: red;" id="err_occupation"></span>
+                </p>
+                <p class="form-group" id="p_about">
+                    <label for="about"><b>Something about you: </b></label>
+                </p>
+                <textarea name="about" id="about" cols="30" rows="5" class="form-control"></textarea>
+                <span style="color: red;" id="err_about"></span>
+
+                <input type="hidden" name="type" id="type" value="ADD">
+            </form>
+
+            <!-- Modal footer -->
+            <div class="modal-footer" id="p_submit">
+                <button onclick='addUser()' class='btn btn-primary' id="submitData">Submit</button>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>

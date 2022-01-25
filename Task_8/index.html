@@ -1,0 +1,55 @@
+<!-- DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN" -->
+<html>
+    <head>
+        <title>Importing CSV file</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            function importData() {
+                $.ajax({
+                    url: "import.php",
+                    type: "POST",
+                    data: new FormData(document.getElementById("myForm")),
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                    beforeSend: function() {
+                        $("button.btn-primary").show();
+                    },
+                    success: function (result) {
+                        $("#demo").text(result);
+                        $("button.btn-primary").hide();
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body class="container">
+
+        <p id="demo"></p>
+
+        <h2><center><b>IMPORT A .csv FILE AND LOAD IT INTO DATABASE</b></center></h2>
+
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-primary" type="button" onclick="hideBtn()" style="margin-top: 12%; display: none;">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...
+            </button>
+        </div>
+
+        <center>
+            <form action="import.php" method="POST" enctype="multipart/form-data" class="form" id="myForm" style="margin-top: 5%;">
+                <p class="form-group">
+                    <input type="file" name="inputFile" id="input_file" class="form-control col-sm-4">
+                </p>
+                <p class="form-froup">
+                    <input type="button" onclick="importData()" value="IMPORT FILE" class="form-control col-sm-4 btn btn-outline-secondary">
+                </p>
+            </form>
+        </center>
+    </body>
+</html>
